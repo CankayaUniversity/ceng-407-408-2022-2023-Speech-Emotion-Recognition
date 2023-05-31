@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title -->
+    <title>Speech Emotion detection</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="../static/img/core-img/favicon.ico">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="../static/style.css">
+
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader d-flex align-items-center justify-content-center">
+        <div class="lds-ellipsis">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <!-- ##### Header Area Start ##### -->
+    <header class="header-area">
+        <!-- Navbar Area -->
+        <div class="oneMusic-main-menu">
+            <div class="classy-nav-container breakpoint-off">
+                <div class="container">
+                    <!-- Menu -->
+                    <nav class="classy-navbar justify-content-between" id="oneMusicNav">
+
+                        <!-- Nav brand -->
+                        <a href="index.html" class="nav-brand"><img src="../static/img/core-img/logo.png" alt=""></a>
+
+                        <!-- Navbar Toggler -->
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"><span></span><span></span><span></span></span>
+                        </div>
+
+                        <!-- Menu -->
+                        <div class="classy-menu">
+
+                            <!-- Close Button -->
+                            <div class="classycloseIcon">
+                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                            </div>
+
+                            <!-- Nav Start -->
+                            <div class="classynav">
+                                <ul>
+                                  <li><a href="{{url_for('first')}}">Home</a></li>
+                                    <li><a href="{{url_for('login')}}">Login</a></li>
+									
+                                </ul>
+
+                                <!-- Login/Register & Cart Button -->
+                                 
+                            </div>
+                            <!-- Nav End -->
+
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ##### Header Area End ##### -->
+
+    <!-- ##### Breadcumb Area Start ##### -->
+    <section class="breadcumb-area bg-img bg-overlay" style="background-image: url(../static/img/speech16.jpg);">
+        <div class="bradcumbContent">
+            <p>Speech</p>
+            <h2>Emotion Recognition</h2>
+        </div>
+    </section>
+    <!-- ##### Breadcumb Area End ##### -->
+
+    <!-- ##### Login Area Start ##### -->
+    <section class="login-area section-padding-100">
+        <div class="container">
+           
+
+            <div class="col-lg-10 col-12 text-center mx-auto mb-5">
+                <h2>Upload Audio <u class="text-info"></u></h2>
+            </div>
+        
+  <div class="row">
+
+                        <div class="col-lg-8 col-12 mx-auto">
+                            <form  action="/submit" method="POST" enctype="multipart/form-data" >
+                              
+                                <div class="row">
+                                       <head>
+			   <script>
+    function previewImage() {
+        var file = document.getElementById("imagefile").files;
+        if (file.length > 0) {
+            var fileReader = new FileReader();
+ 
+            fileReader.onload = function (event) {
+                document.getElementById("preview").setAttribute("src", event.target.result);
+            };
+ 
+            fileReader.readAsDataURL(file[0]);
+        }
+    }
+</script>
+</head>
+<body>
+ <h3> </h3>
+  
+
+
+  <div class="limiter">
+    <div class="container-login100" style="background-image: url(images/background1.jpg); background-size: fill;">
+      <div class="wrap-login100">
+        <div class="login100-form-title" style=" background-image: url(images/background2.jpg);">
+		 
+		
+         
+		  
+        </div>
+</br>
+		</br>
+        <div class="col-md-5 col-lg-4" style="margin-left:300px">
+          <div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
+		  <br>
+          
+	         <input type="file" id="wavfile" name="wavfile" required> 
+          </div>
+		</div>
+    <img id="preview">
+          <div class="container-login100-form-btn">
+		  </br>
+		  </br>
+          <div class="col-md-5 col-lg-4" style="margin-left:300px">   <button class="btn btn-primary"  type="submit"> Submit </button></div>
+          </div>
+        
+      </div>
+    </div>
+
+        </div>
+  </div> 
+
+   
+</body>
+ 	   
+
+                                </div>
+                            </form>
+                        </div>
+
+
+
+
+
+
+
+
+        </div>
+    </section>
+    <!-- ##### Login Area End ##### -->
+
+    <!-- ##### Footer Area Start ##### -->
+     <footer class="footer-area">
+        <div class="container">
+            <div class="row d-flex flex-wrap align-items-center">
+                
+
+                <div class="col-12 col-md-6">
+                    
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- ##### Footer Area Start ##### -->
+
+    <!-- ##### All Javascript Script ##### -->
+    <!-- jQuery-2.2.4 js -->
+    <script src="../static/js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="../static/js/bootstrap/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="../static/js/bootstrap/bootstrap.min.js"></script>
+    <!-- All Plugins js -->
+    <script src="../static/js/plugins/plugins.js"></script>
+    <!-- Active js -->
+    <script src="../static/js/active.js"></script>
+</body>
+
+</html>

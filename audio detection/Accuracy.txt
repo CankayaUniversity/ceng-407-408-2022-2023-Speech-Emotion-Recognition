@@ -1,0 +1,10 @@
+Speech Emotion Recognition using Machine Learning.
+
+Algorithm / Model Used: Artificial Neural Networks (ANN model).
+
+Training accuracy of 100% and 
+Validation accuracy of 99%.
+
+
+
+
