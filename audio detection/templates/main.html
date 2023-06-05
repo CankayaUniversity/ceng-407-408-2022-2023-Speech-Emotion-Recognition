@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+        .myButton {
+            -webkit-border-radius: 23;
+            -moz-border-radius: 23;
+            border-radius: 23px;
+            font-family: 'Roboto', sans-serif;
+            color: #ffffff;
+            font-size: 18px;
+            background: #CB1A15;
+            padding: 10px 50px 10px 50px;
+            text-decoration: none;
+            letter-spacing: 2px;
+        }
+        .myButton:hover {
+            background: #f53d56;
+            text-decoration: none;
+            color: azure;
+        }
+        .myButton:active {
+            position:relative;
+            top:1px;
+        }
+    </style>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <!-- Title -->
+        <title>Speech Emotion Recognition</title>
+        <!-- Favicon -->
+        <link rel="icon" href="../static/img/core-img/favicon.ico">
+        <!-- Stylesheet -->
+        <link rel="stylesheet" href="../static/style.css">
+    </head>
+    <body>
+        <!-- Preloader -->
+        <div class="preloader d-flex align-items-center justify-content-center"></div>
+        <!-- ##### Header Area Start ##### -->
+        <header class="header-area">
+            <!-- Navbar Area -->
+            <div class="oneMusic-main-menu">
+                <div class="classy-nav-container breakpoint-off">
+                    <div class="container">
+                        <!-- Menu -->
+                        <nav class="classy-navbar justify-content-between" id="oneMusicNav">
+
+                            <!-------------------------------------------------------------->
+                            <!--Eski logo -->
+                            <!-- Nav brand -->
+                            <!--<a href="http://127.0.0.1:5000/first" class="nav-brand">
+        <img src="../static/img/core-img/logo.png" alt="">
+    </a>-->
+                            <!-------------------------------------------------------------->
+                            <!-- Nav brand -->   <!--Yeni-->
+                            <a href="http://127.0.0.1:5000/first" class="nav-brand">
+                                <img src="../static/img/core-img/LOGO-SPEECH.png" alt="">
+                            </a>
+                            <!-- Navbar Toggler -->
+                            <div class="classy-navbar-toggler">
+                                <span class="navbarToggler">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </span>
+                            </div>
+                            <!-- Menu -->
+                            <div class="classy-menu">
+                                <!-- Close Button -->
+                                <div class="classycloseIcon">
+                                    <div class="cross-wrap">
+                                        <span class="top"></span>
+                                        <span class="bottom"></span>
+                                    </div>
+                                </div>
+                                <!-- Nav Start -->
+                                <div class="classynav">
+                                    <ul>
+                                        <li>
+                                            <a href="{{url_for('first')}}">Home</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{url_for('login')}}">Login</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{url_for('faq')}}">FAQ</a>
+                                        </li>
+                                    </ul>
+                                    <!-- Login/Register & Cart Button -->
+                                </div>
+                                <!-- Nav End -->
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- ##### Header Area End ##### -->
+        <!-- ##### Breadcumb Area Start ##### -->
+        <section class="breadcumb-area bg-img bg-overlay" style="background-image: url(../static/img/speech16.jpg);"></section>
+        <!-- ##### Breadcumb Area End ##### -->
+        <!-- ##### Login Area Start ##### -->
+        <section class="login-area section-padding-100">
+            <div class="container">
+                <div class="col-lg-10 col-12 text-center mx-auto mb-5">
+                    <h2 style="color: #CB1A15; font-size: 30px; font-family: 'Luckiest Guy'; letter-spacing: 5px;">
+                        SPEECH and TEXT EMOTION RECOGNITION
+                    </h2>
+                </div>
+                <div class="row">
+                    <div class="col-lg-16 col-12 mx-auto">
+                        <form action="/submit" method="POST" enctype="multipart/form-data">
+                            <div class="row justify-content-between">
+                                <div class="col-md-4" style="background-color: #CB1A15; border-radius: 48px;">
+                                    <a href="{{url_for('index')}}">
+                                        <div class="limiter">
+                                            <div class="container-login100">
+                                                <div class="wrap-login100">
+                                                    <div class="login100-form-title"></div>
+                                                    <br>
+                                                    <br>
+                                                    <div style="margin-bottom: 20px; display:flex; justify-content:center;">
+                                                        <div>
+                                                            <div data-validate="Username is required" style="text-align: center;">
+                                                                <img style="width: 304px; height: 292px;" src="../static/img/speech17.png" alt="textalign-left">
+                                                                <img style="width: 86px; height: 92px;" src="../static/img/speech18.png" alt="textalign-left">
+                                                                <div style="color: white;font-size: 30px; font-family: 'Luckiest Guy'; letter-spacing: 5px;">SPEECH</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-md-4" style="background-color: #CB1A15; border-radius: 48px;">
+                                    <a href="{{url_for('text')}}">
+                                        <div class="limiter">
+                                            <div class="container-login100">
+                                                <div class="wrap-login100">
+                                                    <p style="font-weight:bold;"></p>
+                                                    <div class="login100-form-title"></div>
+                                                    <br>
+                                                    <br>
+                                                    <div style="margin-bottom: 20px; display:flex; justify-content:center;">
+                                                        <div>
+                                                            <div data-validate="Username is required" style="text-align: center;">
+                                                                <img style="width: 304px; height: 292px;" src="../static/img/speech19.png" alt="textalign-right">
+                                                                <img style="width: 86px; height: 92px;" src="../static/img/speech20.png" alt="textalign-right">
+                                                                <div style="color: white;font-size: 30px; font-family: 'Luckiest Guy'; letter-spacing: 5px;">TEXT</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <head>
+                                <script>
+                            function previewImage() {
+                                var file = document.getElementById("imagefile").files;
+                                if (file.length > 0) {
+                                    var fileReader = new FileReader();
+
+                                    fileReader.onload = function (event) {
+                                        document.getElementById("preview").setAttribute("src", event.target.result);
+                                    };
+
+                                    fileReader.readAsDataURL(file[0]);
+                                }
+                            }
+                                </script>
+                            </head>
+                            <body>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <img
+                                            id="preview"
+                                            src="#"
+                                            alt="Preview"
+                                            style="display:none; width: 100%; height: auto;"
+                                        >
+                                    </div>
+                                </div>
+                            </body>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ##### Login Area End ##### -->
+        <!-- ##### Footer Area Start ##### -->
+        <footer class="footer-area">
+            <div class="container">
+                <div class="row d-flex flex-wrap align-items-center">
+                    <div class="col-12 col-md-6"></div>
+                </div>
+            </div>
+        </footer>
+        <!-- ##### Footer Area Start ##### -->
+        <!-- ##### All Javascript Script ##### -->
+        <!-- jQuery-2.2.4 js -->
+        <script src="../static/js/jquery/jquery-2.2.4.min.js"></script>
+        <!-- Popper js -->
+        <script src="../static/js/bootstrap/popper.min.js"></script>
+        <!-- Bootstrap js -->
+        <script src="../static/js/bootstrap/bootstrap.min.js"></script>
+        <!-- All Plugins js -->
+        <script src="../static/js/plugins/plugins.js"></script>
+        <!-- Active js -->
+        <script src="../static/js/active.js"></script>
+    </body>
+</html>

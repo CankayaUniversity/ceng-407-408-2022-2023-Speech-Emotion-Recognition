@@ -1,101 +1,273 @@
+İhsan Bardakcı
+İhsan Bardakcı#9843
+
+Berke — 18.10.2022 23:56
+Ek dosya türü: document
+Project_Selection_Form.docx
+30.24 KB
+Ek dosya türü: document
+Project_Tracking_Form.docx
+18.46 KB
+Ek dosya türü: document
+PPF_NS_Speech_Emotion_Recognition.docx
+29.53 KB
+Elif — bugün saat 23:23
+<!--RESULT PAGE-->
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="description" content="">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
-    <!-- Title -->
-    <title>Speech Emotion detection</title>
-
-    <!-- Favicon -->
-    <link rel="icon" href="../static/img/core-img/favicon.ico">
-
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="../static/style.css">
-
-</head>
-
-<body>
-    <!-- Preloader -->
-    <div class="preloader d-flex align-items-center justify-content-center">
-        <div class="lds-ellipsis">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </div>
-
-    <!-- ##### Header Area Start ##### -->
-    <header class="header-area">
-        <!-- Navbar Area -->
-        <div class="oneMusic-main-menu">
-            <div class="classy-nav-container breakpoint-off">
-                <div class="container">
-                    <!-- Menu -->
-                    <nav class="classy-navbar justify-content-between" id="oneMusicNav">
-
-                        <!-- Nav brand -->
-                        <a href="index.html" class="nav-brand"><img src="../static/img/core-img/logo.png" alt=""></a>
-
-                        <!-- Navbar Toggler -->
-                        <div class="classy-navbar-toggler">
-                            <span class="navbarToggler"><span></span><span></span><span></span></span>
-                        </div>
-
-                        <!-- Menu -->
-                        <div class="classy-menu">
-
-                            <!-- Close Button -->
-                            <div class="classycloseIcon">
-                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
-                            </div>
-
-                            <!-- Nav Start -->
-                            <div class="classynav">
-                                <ul>
-                                <li><a href="{{url_for('first')}}">Home</a></li>
-                                    <li><a href="{{url_for('login')}}">Login</a></li>
-									
-                                </ul>
-
-                                <!-- Login/Register & Cart Button -->
-                                
-                            </div>
-                            <!-- Nav End -->
-
-                        </div>
-                    </nav>
-                </div>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+</style>
+Genişlet
+message.txt
+12 KB
+#from flask import Flask, render_template, request
+#from keras.models import load_model
+#from keras.preprocessing import image
+#from keras.metrics import AUC
+#import numpy as np
+#import pandas as pd
+Genişlet
+message.txt
+8 KB
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <!-- Title -->
+        <title>Speech Emotion Recognition</title>
+        <!-- Favicon -->
+        <link rel="icon" href="../static/img/core-img/favicon.ico">
+        <!-- Stylesheet -->
+        <link rel="stylesheet" href="../static/style.css">
+    </head>
+    <body>
+        <!-- Preloader -->
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="lds-ellipsis">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
             </div>
         </div>
-    </header>
-    <!-- ##### Header Area End ##### -->
+        <!-- ##### Header Area Start ##### -->
+        <header class="header-area">
+            <!-- Navbar Area -->
+            <div class="oneMusic-main-menu">
+                <div class="classy-nav-container breakpoint-off">
+                    <div class="container">
+                        <!-- Menu -->
+                        <nav class="classy-navbar justify-content-between" id="oneMusicNav">
+                            <!-- Nav brand -->
+                            <a href="index.html" class="nav-brand">
+                                <img alt="">
+                            </a>
+                            <!-- Navbar Toggler -->
+                            <div class="classy-navbar-toggler">
+                                <span class="navbarToggler">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </span>
+                            </div>
+                            <!-- Menu -->
+                            <div class="classy-menu">
+                                <!-- Close Button -->
+                                <div class="classycloseIcon">
+                                    <div class="cross-wrap">
+                                        <span class="top"></span>
+                                        <span class="bottom"></span>
+                                    </div>
+                                </div>
+                                <!-- Nav Start -->
+                                <div class="classynav">
+                                    <ul>
+                                        <li>
+                                            <a href="{{url_for('first')}}">Home</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{url_for('login')}}">login</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{url_for('index')}}">Speech</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{url_for('text')}}">Text</a>
+                                        </li>
 
-    <!-- ##### Breadcumb Area Start ##### -->
-    <section class="breadcumb-area bg-img bg-overlay" style="background-image: url(../static/img/speech.jpeg);">
-        <div class="bradcumbContent">
-            <p>Speech</p>
-            <h2>Emotion Recognition</h2>
+                                        <li>
+                                            <a href="{{url_for('faq')}}">FAQ</a>
+                                        </li>
+                                    </ul>
+                                    <!-- Login/Register & Cart Button -->
+                                </div>
+                                <!-- Nav End -->
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- ##### Header Area End ##### -->
+        <!-- ##### Hero Area Start ##### -->
+        <section class="hero-area">
+            <div class="hero-slides owl-carousel">
+                <!-- Single Hero Slide -->
+                <div class="single-hero-slide d-flex align-items-center justify-content-center">
+                    <!-- Slide Img -->
+                    <div class="slide-img bg-img" style="background-image: url(../static/img/bg-img/bg-1.jpg);"></div>
+                    <!-- Slide Content -->
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="hero-slides-content text-center">
+                                    <h2 data-animation="fadeInUp" data-delay="300ms">Speech Emotion
+                                        <span>Recognition using</span>
+                                    </h2>
+                                    <h6 data-animation="fadeInUp" data-delay="100ms">Machine Learning</h6>
+... (50 satır kaldı)
+Daralt
+message.txt
+8 KB
+<!--VOICE UPLOAD PAGE-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+Genişlet
+message.txt
+9 KB
+<!--FAQ PAGE-->
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+    </style>
+Genişlet
+message.txt
+8 KB
+faq
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+        .myButton {
+            -webkit-border-radius: 23;
+Genişlet
+message.txt
+12 KB
+main
+<!--LOGIN PAGE-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+Genişlet
+message.txt
+10 KB
+login
+﻿
+<!--LOGIN PAGE-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+    </style>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <!-- Title -->
+        <!--<a href="http://127.0.0.1:5000/first">Speech Emotion detection</a>-->
+        <title>LogIn Page</title>
+        <!-- Favicon -->
+        <link rel="icon" href="../static/img/core-img/favicon.ico">
+        <!-- Stylesheet -->
+        <link rel="stylesheet" href="../static/style.css">
+    </head>
+    <body>
+        <!-- Preloader -->
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="lds-ellipsis">
+            </div>
         </div>
-    </section>
-    <!-- ##### Breadcumb Area End ##### -->
+        <!-- ##### Header Area Start ##### -->
+        <header class="header-area">
+            <!-- Navbar Area -->
+            <div class="oneMusic-main-menu">
+                <div class="classy-nav-container breakpoint-off">
+                    <div class="container">
+                        <!-- Menu -->
+                        <nav class="classy-navbar justify-content-between" id="oneMusicNav">
+                            <!-- Nav brand -->
+                            <a href="http://127.0.0.1:5000/first" class="nav-brand">
+                                <img src="../static/img/core-img/LOGO-SPEECH.png" alt="">
+                            </a>
 
-    <!-- ##### Login Area Start ##### -->
-    <section class="login-area section-padding-100">
-        <div class="container">
-           
-		   <div class="row">
-
-                        <div class="col-lg-10 col-12 text-center mx-auto mb-5">
-                            <h2>Login <u class="text-info"></u></h2>
-                        </div>
- 
-		 <script>
+                            <!-- Navbar Toggler -->
+                            <div class="classy-navbar-toggler">
+                                <span class="navbarToggler">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </span>
+                            </div>
+                            <!-- Menu -->
+                            <div class="classy-menu">
+                                <!-- Close Button -->
+                                <div class="classycloseIcon">
+                                    <div class="cross-wrap">
+                                        <span class="top"></span>
+                                        <span class="bottom"></span>
+                                    </div>
+                                </div>
+                                <!-- Nav Start -->
+                                <div class="classynav">
+                                    <ul>
+                                        <li>
+                                            <a href="{{url_for('first')}}">Home</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{url_for('login')}}">Login</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{url_for('faq')}}">FAQ</a>
+                                        </li>
+                                    </ul>
+                                    <!-- Login/Register & Cart Button -->
+                                </div>
+                                <!-- Nav End -->
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- ##### Header Area End ##### -->
+        <!-- ##### Breadcumb Area Start ##### -->
+        <section class="breadcumb-area bg-img bg-overlay" style="background-image: url(../static/img/speech.jpeg);">
+        </section>
+        <!-- ##### Breadcumb Area End ##### -->
+        <!-- ##### Login Area Start ##### -->
+        <section class="login-area section-padding-100">
+            <div class="container">
+                <div class="col-lg-12 col-12 text-center mx-auto mb-5">
+                    <h2 style="color: #CB1A15; font-size: 40px; font-family: 'Luckiest Guy'; letter-spacing: 5px;">
+                        SPEECH and TEXT EMOTION RECOGNITION
+                    </h2>
+                </div>
+                <div class="row">
+                    <script>
         addEventListener("load", function () {
             setTimeout(hideURLbar, 0);
         }, false);
@@ -112,7 +284,7 @@
 	{
 	  alert("Login Success!");
 	  
-	  window.location = "{{url_for('index')}}";
+	  window.location = "{{url_for('main')}}";
 	  return false;
 	}
 	else
@@ -120,101 +292,83 @@
 	alert("Invalid Credentials!")
 	}
         }
-		
-		  
-
-
- 
-    </script>
-	
-</head>
-
- <body id="page-top">
-
-   
- 
-
-  <!-- Portfolio Section -->
-  <section class="page-section portfolio" id="portfolio">
- 
-      <br>
-	  <br>
-			  
-			  
-                <div class="row">
- <div class="section-title">
-         
- 
-        </div>
-        <!-- Portfolio Item 1 -->
-        <div class="col-md-10 col-lg-6" style="margin-left:420px">
-		 <div class="control-group">
-			      <!-- Username -->
-				 
-			      <label class="control-label"   for="username"><b>Username</b></label>
-			      <div class="controls">
-			        <input type="text" id="uname" name="uname" placeholder="Username" class="form-control">
-			       
-				  </div>
-			    </div>
-				</br>
-				
-			    <div class="control-group">
-			      <!-- Password-->
-				  
-			      <label class="control-label"  for="password"><b>Password</b></label>
-			      <div class="controls">
-			        <input type="password" id="pwd" name="pwd" placeholder="password" class="form-control">
-			      
-				  </div>
-			    </div>
-				 <div class="col-md-9 col-lg-6" style="margin-left:-290px">
-			    <div class="control-group">
-			      <!-- Button -->
-				  <br>
-			      <div class="controls">
-				   
-			        <input type="button" class="btn btn-primary" value="Login" style="margin-left: 390px" onclick="login()">
-			      
-				  </div>
-			    </div>
-				 </div>
-  </div>
-  </div>
- 
- 
-   
-  </section>
-
-
-  
-
-    </body>
-						 
-
-                    </div>
-		   
-		   
-		   
-		   
+                    </script>
+                </head>
+                <body id="page-top">
+                    <!-- Portfolio Section -->
+                    <section class="page-section portfolio" id="portfolio">
+                        <br>
+                        <br>
+                        <div class="row" style="justify-content: center;">
+                            <div class="section-title"></div>
+                            <!-- Portfolio Item 1 -->
+                            <div class="col-lg-7" style="margin-left:350px; background-color: #CB1A15; padding: 50px 110px 50px 110px; border-radius: 48px;">
+                                <h2 style="text-align: center; color: white; font-family: 'Luckiest Guy'; letter-spacing: 8px;">LOGIN
+                                    <u class="text-info"></u>
+                                </h2>
+                                <div class="control-group">
+                                    <!-- Username -->
+                                    <label class="control-label" for="username">
+                                        <b style="color: white; font-size: 15px;">USERNAME</b>
+                                    </label>
+                                    <div class="controls">
+                                        <input
+                                            type="text"
+                                            id="uname"
+                                            name="uname"
+                                            placeholder="username"
+                                            class="form-control"
+                                        >
+                                    </div>
+                                </div>
+                                </br>
+                                <div class="control-group">
+                                    <!-- Password-->
+                                    <label class="control-label" for="password">
+                                        <b style="color: white; font-size: 15px;">PASSWORD</b>
+                                    </label>
+                                    <div class="controls">
+                                        <input
+                                            type="password"
+                                            id="pwd"
+                                            name="pwd"
+                                            placeholder="password"
+                                            class="form-control"
+                                        >
+                                    </div>
+                                    <div>
+                                        <div>
+                                            <!-- Button -->
+                                            <br>
+                                            <div>
+                                                <input
+                                                    type="button"
+                                                    class="btn btn-light"
+                                                    value="LOGIN"
+                                                    style="margin-left: 5px; padding-right: 110px;padding-left: 110px;border-radius: 30px;"
+                                                    onclick="login()"
+                                                >
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </body>
+            </div>
         </div>
     </section>
     <!-- ##### Login Area End ##### -->
-
     <!-- ##### Footer Area Start ##### -->
-     <footer class="footer-area">
+    <footer class="footer-area">
         <div class="container">
             <div class="row d-flex flex-wrap align-items-center">
-                
-
-                <div class="col-12 col-md-6">
-                    
-                </div>
+                <div class="col-12 col-md-6"></div>
             </div>
         </div>
     </footer>
     <!-- ##### Footer Area Start ##### -->
-
     <!-- ##### All Javascript Script ##### -->
     <!-- jQuery-2.2.4 js -->
     <script src="../static/js/jquery/jquery-2.2.4.min.js"></script>
@@ -227,5 +381,6 @@
     <!-- Active js -->
     <script src="../static/js/active.js"></script>
 </body>
-
 </html>
+message.txt
+10 KB
