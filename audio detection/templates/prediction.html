@@ -74,12 +74,23 @@
                                         <a href="{{url_for('login')}}">Login</a>
                                     </li>-->
                                     <li>
-                                        <a href="{{url_for('index')}}">Preview</a>
+                                        <a href="{{url_for('first')}}">Home</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="{{url_for('index')}}">Speech</a>
                                     </li>
                                     <li>
                                         <a href="{{url_for('text')}}">Text</a>
                                     </li>
-                                   
+                                    <li>
+                                        <a href="{{url_for('finalRes')}}">Result</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="{{url_for('login')}}">FAQ</a>
+                                    </li>
+
                                     <!--<li>
                                         <a href="{{url_for('performance')}}">Performance_Analysis</a>
                                     </li>-->
@@ -107,40 +118,39 @@
                 </h2>
             </div>
             <!--<form action="#" method="post" role="form">
-    <div class="row">
-        <div class="col-sm-3" style="background-color: #6FE29D;border-radius: 20px; height: 160px;">
-            <form>
-                <div style="font-size: 30px; margin: 20px; color: aliceblue;">
-                    <input type="radio" value="Speech" checked style="
-                    border: 20px;
-                    width: 50px;
-                    height: 20px;">
-                    Speech </br>
-                    <input type="radio" value="Text" style="
-                    border: 20px;
-                    width: 50px;
-                    height: 20px;">
-                    Text </br>
+            <div class="row">
+                <div class="col-sm-3" style="background-color: #6FE29D;border-radius: 20px; height: 160px;">
+                    <form>
+                        <div style="font-size: 30px; margin: 20px; color: aliceblue;">
+                            <input type="radio" value="Speech" checked style="
+                            border: 20px;
+                            width: 50px;
+                            height: 20px;">
+                            Speech </br>
+                            <input type="radio" value="Text" style="
+                            border: 20px;
+                            width: 50px;
+                            height: 20px;">
+                            Text </br>
+                        </div>
+                        <button type="button" style="
+                        color:#CB1A15;
+                        background-color: white;
+                        border-radius: 20px;
+                        font-size: 15px;
+                        width: 80px;
+                        height: 30px;
+                        float: right;"
+                        >Select</button>
+                    </form>
                 </div>
-                <button type="button" style="
-                color:#CB1A15;
-                background-color: white;
-                border-radius: 20px;
-                font-size: 15px;
-                width: 80px;
-                height: 30px;
-                float: right;"
-                >Select</button>
-            </form>
-        </div>
-        <center>
-            </br>
-            </br>-->
-             callChart( prediction )
+                <center>
+                    </br>
+                    </br>-->
 
-             <div class='some-page-wrapper'>
+            <div class='some-page-wrapper'>
                 <div class='row'>
-                    <div style="width:200px" class='column'>
+                    <div style="width:500px" class='column'>
                         <div class='blue-column'>
                             <div style="margin-right: 300px; width: 500px;">
                                 <center>
@@ -158,18 +168,21 @@
                                         </div>
                                         <br>
                                         <br>
-                                        <div id="prediction"style="align-items: center height: 50px; display: flex; justify-content: center; font-size: 25px; text-transform: uppercase; border-radius: 20px; background-color: #CB1A15; color: aliceblue; ">
+                                        <div id="prediction" style="align-items: center height: 50px; display: flex; justify-content: center; font-size: 25px; text-transform: uppercase; border-radius: 20px; background-color: #CB1A15; color: aliceblue; ">
                                             {{prediction}}
                                         </div>
+                                        <div id="prediction1Rate" style="align-items: center height: 50px; display: flex; justify-content: center; font-size: 25px; text-transform: uppercase; border-radius: 20px; background-color: #CB1A15; color: aliceblue; ">
+                                            {{prediction1Rate}}
+                                        </div>
                                         <!--<div style="border-radius: 20px; background-color: #E5E869;">
-                                    RESULT
-                                    <h3>
-                                        <b style="color: aliceblue;">{{prediction}}</b>
-                                        <br>
-                                        <br>
-                                        <p>{% endif %}</p>
-                                    </h3>
-                                </div>-->
+                                            RESULT
+                                            <h3>
+                                                <b style="color: aliceblue;">{{prediction}}</b>
+                                                <br>
+                                                <br>
+                                                <p>{% endif %}</p>
+                                            </h3>
+                                        </div>-->
                                     </div>
                                 </div>
                             </div>
@@ -232,23 +245,31 @@
     // Draw the chart and set the chart values
     function drawChart() {
         var prediction = document.getElementById("prediction").innerText;
+        var prediction1Rate = document.getElementById("prediction1Rate").innerText;
+        debugger;
 
         var myArray = ['Happy', 'Neutral', 'Sad', 'Angry', 'Fear']
         var result = [['Emotion', 'Average']];
+        //<sil>
+        var newarray = [];
+        newarray.push(prediction);
+        newarray.push(+prediction1Rate);
+        result.push(newarray)
+        //<!-sil->
         debugger
-        for (var i = 0; i < myArray.length; i++) {
-            var newarray = [];
-            if (myArray[i].toLocaleLowerCase() == prediction.toLocaleLowerCase()) {
-                newarray.push(prediction);
-                newarray.push(68);
-                result.push(newarray)
-            } else {
-                newarray.push(myArray[i]);
-                newarray.push(i*2+4);
-                result.push(newarray)
-            }
+        //for (var i = 0; i < myArray.length; i++) {
+        //    var newarray = [];
+        //    if (myArray[i].toLocaleLowerCase() == prediction.toLocaleLowerCase()) {
+        //        newarray.push(prediction);
+        //        newarray.push(68);
+        //        result.push(newarray)
+        //    } else {
+        //        newarray.push(myArray[i]);
+        //        newarray.push(i*2+4);
+        //        result.push(newarray)
+        //    }
 
-        }
+        //}
         var data = google.visualization.arrayToDataTable(
             result
         );
