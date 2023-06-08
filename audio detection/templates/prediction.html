@@ -174,6 +174,12 @@
                                         <div id="prediction1Rate" style="align-items: center height: 50px; display: flex; justify-content: center; font-size: 25px; text-transform: uppercase; border-radius: 20px; background-color: #CB1A15; color: aliceblue; ">
                                             {{prediction1Rate}}
                                         </div>
+                                        <div id="prediction2" style="align-items: center height: 50px; display: flex; justify-content: center; font-size: 25px; text-transform: uppercase; border-radius: 20px; background-color: #CB1A15; color: aliceblue; ">
+                                            {{prediction2}}
+                                        </div>
+                                        <div id="prediction2Rate" style="align-items: center height: 50px; display: flex; justify-content: center; font-size: 25px; text-transform: uppercase; border-radius: 20px; background-color: #CB1A15; color: aliceblue; ">
+                                            {{prediction2Rate}}
+                                        </div>
                                         <!--<div style="border-radius: 20px; background-color: #E5E869;">
                                             RESULT
                                             <h3>
@@ -247,18 +253,45 @@
         var prediction = document.getElementById("prediction").innerText;
         var prediction1Rate = document.getElementById("prediction1Rate").innerText;
 
-        localStorage.setItem('speechResultPrediction', prediction);
-        localStorage.setItem('speechResultPredictionRate', prediction1Rate);
+        var prediction2 = document.getElementById("prediction2").innerText;
+        var prediction2Rate = document.getElementById("prediction2Rate").innerText;
+
+        //localStorage.setItem('speechResultPrediction', prediction);
+        //localStorage.setItem('speechResultPredictionRate', prediction1Rate);
         debugger;
 
         var myArray = ['Happy', 'Neutral', 'Sad', 'Angry', 'Fear']
         var result = [['Emotion', 'Average']];
-        //<sil>
+
+        let predRes = 0;
+        // var prediction = prediction1Rate;
+        debugger
+
+        if (+prediction1Rate >= 80 || +prediction2Rate >= 80) {
+            if (+prediction2Rate > +prediction1Rate) {
+                predRes = +prediction2Rate;
+            }
+            else predRes = +prediction1Rate;
+        }
+        else {
+            predRes = (+prediction2Rate + prediction1Rate) / 2;
+        }
+
         var newarray = [];
         newarray.push(prediction);
-        newarray.push(+prediction1Rate);
+        newarray.push(+predRes);
         result.push(newarray)
-        //<!-sil->
+
+        var newarray2 = [];
+        newarray2.push("Other");
+        newarray2.push(100 - predRes);
+        result.push(newarray2)
+        //<sil>
+        //var newarray = [];
+        //newarray.push(prediction);
+        //newarray.push(+prediction1Rate);
+        //result.push(newarray)
+        ////<!-sil->
         debugger
         //for (var i = 0; i < myArray.length; i++) {
         //    var newarray = [];
