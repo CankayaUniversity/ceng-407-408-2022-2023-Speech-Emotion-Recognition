@@ -246,6 +246,9 @@
     function drawChart() {
         var prediction = document.getElementById("prediction").innerText;
         var prediction1Rate = document.getElementById("prediction1Rate").innerText;
+
+        localStorage.setItem('speechResultPrediction', prediction);
+        localStorage.setItem('speechResultPredictionRate', prediction1Rate);
         debugger;
 
         var myArray = ['Happy', 'Neutral', 'Sad', 'Angry', 'Fear']
