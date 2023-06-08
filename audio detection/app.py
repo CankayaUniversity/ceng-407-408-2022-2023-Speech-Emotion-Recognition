@@ -34,7 +34,7 @@ import transformers
 from tensorflow.keras.preprocessing.text import Tokenizer
 import speech_recognition as sr
 from numpy.linalg import norm
-
+##DENEME
 ### Flask imports
 import requests
 from flask import Flask, render_template, session, request, redirect, flash, Response
