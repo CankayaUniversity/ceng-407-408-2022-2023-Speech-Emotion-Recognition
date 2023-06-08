@@ -239,6 +239,8 @@
         var prediction = document.getElementById("prediction").innerText;
         var prediction1Rate = document.getElementById("predictionRate").innerText;
         debugger;
+        localStorage.setItem('textResultPrediction', prediction);
+        localStorage.setItem('textResultPredictionRate', prediction1Rate);
 
         var myArray = ['Happy', 'Neutral', 'Sad', 'Angry', 'Fear']
         var result = [['Emotion', 'Average']];
