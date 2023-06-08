@@ -1,4 +1,7 @@
-<!--RESULT PAGE-->
+<!--Text Result Page-->>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <style>
@@ -151,28 +154,22 @@
             <div class='some-page-wrapper'>
                 <div class='row'>
                     <div style="width:500px" class='column'>
+                        <div class='green-column'>
+                            <div id="piechart"></div>
+
+                        </div>
+                    </div>
+                    <div style="width:500px" class='column'>
                         <div class='blue-column'>
                             <div style="margin-right: 300px; width: 500px;">
-                                <center>
-                                    <h3 class="title-a">
-                                        Speech Emotion Recognition Prediction
-                                    </h3>
-                                </center>
                                 <div class="content">
                                     <div class="col-lg-20">
                                         {% if prediction %}
-                                        <div class="col-md-70 col-lg-50" style="margin-right: 50px">
-                                            <audio controls>
-                                                <source src="{{audio_path}}" type="audio/wav">
-                                            </audio>
-                                        </div>
-                                        <br>
-                                        <br>
                                         <div id="prediction" style="align-items: center height: 50px; display: flex; justify-content: center; font-size: 25px; text-transform: uppercase; border-radius: 20px; background-color: #CB1A15; color: aliceblue; ">
                                             {{prediction}}
                                         </div>
-                                        <div id="prediction1Rate" style="align-items: center height: 50px; display: flex; justify-content: center; font-size: 25px; text-transform: uppercase; border-radius: 20px; background-color: #CB1A15; color: aliceblue; ">
-                                            {{prediction1Rate}}
+                                        <div id="predictionRate" style="align-items: center height: 50px; display: flex; justify-content: center; font-size: 25px; text-transform: uppercase; border-radius: 20px; background-color: #CB1A15; color: aliceblue; ">
+                                            {{predictionRate}}
                                         </div>
                                         <!--<div style="border-radius: 20px; background-color: #E5E869;">
                                             RESULT
@@ -188,12 +185,7 @@
                             </div>
                         </div>
                     </div>
-                    <div style="width:200px" class='column'>
-                        <div class='green-column'>
-                            <div id="piechart"></div>
 
-                        </div>
-                    </div>
                 </div>
             </div>
 
@@ -245,7 +237,7 @@
     // Draw the chart and set the chart values
     function drawChart() {
         var prediction = document.getElementById("prediction").innerText;
-        var prediction1Rate = document.getElementById("prediction1Rate").innerText;
+        var prediction1Rate = document.getElementById("predictionRate").innerText;
         debugger;
 
         var myArray = ['Happy', 'Neutral', 'Sad', 'Angry', 'Fear']
@@ -255,6 +247,11 @@
         newarray.push(prediction);
         newarray.push(+prediction1Rate);
         result.push(newarray)
+
+        var newarray2 = [];
+        newarray2.push("Other");
+        newarray2.push(100 - prediction1Rate);
+        result.push(newarray2)
         //<!-sil->
         debugger
         //for (var i = 0; i < myArray.length; i++) {
