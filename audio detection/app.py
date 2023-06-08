@@ -58,10 +58,18 @@ def extract_feature(audio_path):
 
 
 def ANN_print_prediction(audio_path):
-    prediction_feature = extract_feature(audio_path)
-    predicted_vector = np.argmax(Model1_ANN.predict(prediction_feature), axis=-1) #max value index
-    predicted_class = le.inverse_transform(predicted_vector) #duygu adi
-    return predicted_class[0] ##duygu adi
+    prediction_feature = extract_feature(audio_path) 
+    predicted_vector = Model1_ANN.predict(prediction_feature) #
+    #print(predicted_vector[0][0]) #anger oran
+    #print(predicted_vector[0][1]) #excited oran
+    #print(predicted_vector[0][2]) #frustration oran
+    #print(predicted_vector[0][3]) #happy oran
+    #print(predicted_vector[0][4]) #neutral oran
+    #print(predicted_vector[0][5]) #sadness oran
+    return predicted_vector[0]
+    encoded_dict = {'Anger':0, 'Excited': 1, 'Frust': 2,'Happy':3, 'Neutral': 4,'Sadness':5}
+    #for key, value in zip(encoded_dict.keys(), predicted_vector[0]):
+    #    print(key, value)
 
 def speech2text(audio_path):
 	recognizer = sr.Recognizer()
@@ -119,7 +127,7 @@ def predict_BERT_text(text):
 
 
  # print(predict_BERT("./deneme.wav"))
- # print(ANN_print_prediction("./deneme.wav"))
+print(ANN_print_prediction("./deneme.wav"))
 
 
 @app.route("/")
