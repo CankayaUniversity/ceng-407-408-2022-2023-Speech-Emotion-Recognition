@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\templates"
   ],
-  "SelectedNode": "\\app.py",
+  "SelectedNode": "\\templates\\predictionText.html",
   "PreviewInSolutionExplorer": false
 }
