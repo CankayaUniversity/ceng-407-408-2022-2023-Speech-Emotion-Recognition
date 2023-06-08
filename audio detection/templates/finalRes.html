@@ -2,203 +2,260 @@
 
 <!DOCTYPE html>
 <html lang="en">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
-    </style>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="description" content="">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-        <!-- Title -->
-        <!--<a href="http://127.0.0.1:5000/first">Speech Emotion detection</a>-->
-        <title>Result of Speech and Text</title>
-        <!-- Favicon -->
-        <link rel="icon" href="../static/img/core-img/favicon.ico">
-        <!-- Stylesheet -->
-        <link rel="stylesheet" href="../static/style.css">
-    </head>
-    <body>
-        <!-- Preloader -->
-        <div class="preloader d-flex align-items-center justify-content-center">
-            <div class="lds-ellipsis">
-            </div>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!-- Title -->
+    <!--<a href="http://127.0.0.1:5000/first">Speech Emotion detection</a>-->
+    <title>Result of Speech and Text</title>
+    <!-- Favicon -->
+    <link rel="icon" href="../static/img/core-img/favicon.ico">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+
+    <!-- Preloader -->
+    <div class="preloader d-flex align-items-center justify-content-center">
+        <div class="lds-ellipsis">
         </div>
-        <!-- ##### Header Area Start ##### -->
-        <header class="header-area">
-            <!-- Navbar Area -->
-            <div class="oneMusic-main-menu">
-                <div class="classy-nav-container breakpoint-off">
-                    <div class="container">
-                        <!-- Menu -->
-                        <nav class="classy-navbar justify-content-between" id="oneMusicNav">
-                            <!-- Nav brand -->
-                            <!--<a href="http://127.0.0.1:5000/first" class="nav-brand">
+    </div>
+    <!-- ##### Header Area Start ##### -->
+    <header class="header-area">
+        <!-- Navbar Area -->
+        <div class="oneMusic-main-menu">
+            <div class="classy-nav-container breakpoint-off">
+                <div class="container">
+                    <!-- Menu -->
+                    <nav class="classy-navbar justify-content-between" id="oneMusicNav">
+                        <!-- Nav brand -->
+                        <!--<a href="http://127.0.0.1:5000/first" class="nav-brand">
                             <img src="../static/img/core-img/logo.png" alt="">
                         </a>-->
-                            <!-- Nav brand -->
-                            <a href="http://127.0.0.1:5000/first" class="nav-brand">
-                                <img src="../static/img/core-img/LOGO-SPEECH.png" alt="">
-                            </a>
-                            <!-- Navbar Toggler -->
-                            <div class="classy-navbar-toggler">
-                                <span class="navbarToggler">
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                </span>
-                            </div>
-                            <!-- Menu -->
-                            <div class="classy-menu">
-                                <!-- Close Button -->
-                                <div class="classycloseIcon">
-                                    <div class="cross-wrap">
-                                        <span class="top"></span>
-                                        <span class="bottom"></span>
-                                    </div>
+                        <!-- Nav brand -->
+                        <a href="http://127.0.0.1:5000/first" class="nav-brand">
+                            <img src="../static/img/core-img/LOGO-SPEECH.png" alt="">
+                        </a>
+                        <!-- Navbar Toggler -->
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                        </div>
+                        <!-- Menu -->
+                        <div class="classy-menu">
+                            <!-- Close Button -->
+                            <div class="classycloseIcon">
+                                <div class="cross-wrap">
+                                    <span class="top"></span>
+                                    <span class="bottom"></span>
                                 </div>
-                                <!-- Nav Start -->
-                                <div class="classynav">
-                                    <ul>
-                                        <li>
-                                            <a href="{{url_for('first')}}">Home</a>
-                                        </li>
-
-                                        <li>
-                                            <a href="{{url_for('index')}}">Speech</a>
-                                        </li>
-                                        <li>
-                                            <a href="{{url_for('text')}}">Text</a>
-                                        </li>
-                                        <li>
-                                            <a href="{{url_for('finalRes')}}">Result</a>
-                                        </li>
-
-                                        <li>
-                                            <a href="{{url_for('login')}}">FAQ</a>
-                                        </li>
-                                    </ul>
-                                    <!-- Login/Register & Cart Button -->
-                                </div>
-                                <!-- Nav End -->
                             </div>
-                        </nav>
-                    </div>
+                            <!-- Nav Start -->
+                            <div class="classynav">
+                                <ul>
+                                    <li>
+                                        <a href="{{url_for('first')}}">Home</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="{{url_for('index')}}">Speech</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{url_for('text')}}">Text</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{url_for('finalRes')}}">Result</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="{{url_for('login')}}">FAQ</a>
+                                    </li>
+                                </ul>
+                                <!-- Login/Register & Cart Button -->
+                            </div>
+                            <!-- Nav End -->
+                        </div>
+                    </nav>
                 </div>
             </div>
-        </header>
-        <!-- ##### Header Area End ##### -->
-        <!-- ##### Breadcumb Area Start ##### -->
-        <section class="breadcumb-area bg-img bg-overlay" style="background-image: url(../static/img/faq.png);">
-        </section>
-        <!-- ##### Breadcumb Area End ##### -->
-        <!-- ##### Login Area Start ##### -->
-        <section class="login-area section-padding-100">
-            <div class="container">
-                <div class="col-lg-12 col-12 text-center mx-auto mb-5">
-                    <h2 style="color: #CB1A15; font-size: 40px; font-family: 'Luckiest Guy'; letter-spacing: 5px;">
-                        Result of Speech and Text
-                    </h2>
-                </div>
-                <div class="row">
-                    <script>
-        addEventListener("load", function () {
-            setTimeout(hideURLbar, 0);
-        }, false);
-
-        function hideURLbar() {
-            window.scrollTo(0, 1);
-        }
-
-        
-                    </script>
-                    </head>
-
-
-        </section>
-
-
-
-        
-
-        <!-- ##### Footer Area Start ##### -->
-        <footer class="footer-area">
-            <div class="container">
-                <div class="row d-flex flex-wrap align-items-center">
-                    <div class="col-12 col-md-6"></div>
-                </div>
+        </div>
+    </header>
+    <!-- ##### Header Area End ##### -->
+    <!-- ##### Breadcumb Area Start ##### -->
+    <section class="breadcumb-area bg-img bg-overlay" style="background-image: url(../static/img/faq.png);">
+    </section>
+    <!-- ##### Breadcumb Area End ##### -->
+    <!-- ##### Login Area Start ##### -->
+    <section class="login-area section-padding-100">
+        <div class="container">
+            <div class="col-lg-12 col-12 text-center mx-auto mb-5">
+                <h2 style="color: #CB1A15; font-size: 40px; font-family: 'Luckiest Guy'; letter-spacing: 5px;">
+                    Result of Speech and Text
+                </h2>
             </div>
-        </footer>
-        <!-- ##### Footer Area Start ##### -->
-        <!-- ##### All Javascript Script ##### -->
-        <!-- jQuery-2.2.4 js -->
-        <script src="../static/js/jquery/jquery-2.2.4.min.js"></script>
-        <!-- Popper js -->
-        <script src="../static/js/bootstrap/popper.min.js"></script>
-        <!-- Bootstrap js -->
-        <script src="../static/js/bootstrap/bootstrap.min.js"></script>
-        <!-- All Plugins js -->
-        <script src="../static/js/plugins/plugins.js"></script>
-        <!-- Active js -->
-        <script src="../static/js/active.js"></script>
+            <div class="row">
+                <script>
+                    addEventListener("load", function () {
+                        setTimeout(hideURLbar, 0);
+                    }, false);
 
-        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-        <script type="text/javascript">
-            // Load google charts
-            google.charts.load('current', { 'packages': ['corechart'] });
-            google.charts.setOnLoadCallback(drawChart);
-
-
-            //LOCAL STROGE OLAN BOLUM
-            // Draw the chart and set the chart values
-            function drawChart() {
-                //var prediction = document.getElementById("prediction").innerText;
-                var prediction = "Happy";
-
-                debugger
-               // localStorage.setItem('speecResult', prediction);
-
-                var speecResult = localStorage.getItem('speecResult');
-                var textResult = localStorage.getItem('textResult');
-
-                var myArray = ['Happy', 'Neutral', 'Sad', 'Angry', 'Fear']
-                var result = [['Emotion', 'Average']];
-                debugger
-                for (var i = 0; i < myArray.length; i++) {
-                    var newarray = [];
-                    if (myArray[i].toLocaleLowerCase() == prediction.toLocaleLowerCase()) {
-                        newarray.push(prediction);
-                        newarray.push(68);
-                        result.push(newarray)
-                    } else {
-                        newarray.push(myArray[i]);
-                        newarray.push(i * 2 + 4);
-                        result.push(newarray)
+                    function hideURLbar() {
+                        window.scrollTo(0, 1);
                     }
 
-                }
-                var data = google.visualization.arrayToDataTable(
-                    result
-                );
 
-                var data = google.visualization.arrayToDataTable([
-                    ['Task', 'Hours per Day'],
-                    ['Happy', 1],
-                    ['Neutral', 2],
-                    ['Sad', 3],
-                    [{}, 4],
-                    ['Fear', 5]
-                ]);
+                </script>
+                </head>
 
-                // Optional; add a title and set the width and height of the chart
-                var options = { 'title': 'My Average Day', 'width': 550, 'height': 400 };
 
-                // Display the chart inside the <div> element with id="piechart"
-                var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-                chart.draw(data, options);
+    </section>
+
+
+    <head>
+        <style>
+            .center-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 50vh;
             }
-        </script>
-
+        </style>
+    </head>
+    <body>
+        <div class="center-container">
+            <div style="width: 500px" class="column">
+                <div class="green-column">
+                    <div id="piechart"></div>
+                </div>
+            </div>
+        </div>
     </body>
+
+
+
+
+
+    <!-- ##### Footer Area Start ##### -->
+    <footer class="footer-area">
+        <div class="container">
+            <div class="row d-flex flex-wrap align-items-center">
+                <div class="col-12 col-md-6"></div>
+            </div>
+        </div>
+    </footer>
+    <!-- ##### Footer Area Start ##### -->
+    <!-- ##### All Javascript Script ##### -->
+    <!-- jQuery-2.2.4 js -->
+    <script src="../static/js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="../static/js/bootstrap/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="../static/js/bootstrap/bootstrap.min.js"></script>
+    <!-- All Plugins js -->
+    <script src="../static/js/plugins/plugins.js"></script>
+    <!-- Active js -->
+    <script src="../static/js/active.js"></script>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        // Load google charts
+        google.charts.load('current', { 'packages': ['corechart'] });
+        google.charts.setOnLoadCallback(drawChart);
+
+
+        //LOCAL STROGE OLAN BOLUM
+        // Draw the chart and set the chart values
+        function drawChart() {
+            //var prediction = document.getElementById("prediction").innerText;
+
+            const textResultPrediction = localStorage.getItem('textResultPrediction');
+            const textResultPredictionRate = localStorage.getItem('textResultPredictionRate');
+            const speechResultPredictionRate = localStorage.getItem('speechResultPredictionRate');
+            let predictionRate = 0;
+            var prediction = textResultPrediction;
+            debugger
+
+            if (+textResultPredictionRate >= 80 || +speechResultPredictionRate >= 80) {
+                if (+speechResultPredictionRate > +textResultPredictionRate) {
+                    predictionRate = +speechResultPredictionRate;
+                }
+                else predictionRate = +textResultPredictionRate;
+            }
+            else {
+                predictionRate = (+speechResultPredictionRate + textResultPredictionRate) / 2;
+            }
+
+
+
+
+            debugger
+            // localStorage.setItem('speecResult', prediction);
+
+            //var speecResult = localStorage.getItem('speecResult');
+            //var textResult = localStorage.getItem('textResult');
+
+
+
+
+            var myArray = ['Happy', 'Neutral', 'Sad', 'Angry', 'Fear']
+            var result = [['Emotion', 'Average']];
+
+            var newarray = [];
+            newarray.push(prediction);
+            newarray.push(+predictionRate);
+            result.push(newarray)
+
+            var newarray2 = [];
+            newarray2.push("Other");
+            newarray2.push(100 - predictionRate);
+            result.push(newarray2)
+            debugger
+            //for (var i = 0; i < myArray.length; i++) {
+            //    var newarray = [];
+            //    if (myArray[i].toLocaleLowerCase() == prediction.toLocaleLowerCase()) {
+            //        newarray.push(prediction);
+            //        newarray.push(68);
+            //        result.push(newarray)
+            //    } else {
+            //        newarray.push(myArray[i]);
+            //        newarray.push(i * 2 + 4);
+            //        result.push(newarray)
+            //    }
+
+            //}
+            var data = google.visualization.arrayToDataTable(
+                result
+            );
+
+            //var data = google.visualization.arrayToDataTable([
+            //    ['Task', 'Hours per Day'],
+            //    ['Happy', 1],
+            //    ['Neutral', 2],
+            //    ['Sad', 3],
+            //    [{}, 4],
+            //    ['Fear', 5]
+            //]);
+
+            // Optional; add a title and set the width and height of the chart
+            var options = { 'title': 'My Average Day', 'width': 550, 'height': 400 };
+
+            // Display the chart inside the <div> element with id="piechart"
+            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+            chart.draw(data, options);
+        }
+
+
+    </script>
+
+
+</body>
 </html>
