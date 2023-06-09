@@ -278,14 +278,15 @@
         }
 
         var newarray = [];
-        newarray.push(prediction);
+        newarray.push(prediction2); // En yüksek duyguyu ifade eden değişkeni buraya ekleyin
         newarray.push(+predRes);
-        result.push(newarray)
+        result.push(newarray);
 
         var newarray2 = [];
-        newarray2.push("Other");
+        newarray2.push(prediction);
         newarray2.push(100 - predRes);
-        result.push(newarray2)
+        result.push(newarray2);
+
         //<sil>
         //var newarray = [];
         //newarray.push(prediction);
