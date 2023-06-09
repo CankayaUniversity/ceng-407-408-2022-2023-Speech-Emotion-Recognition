@@ -1,96 +1,105 @@
 <!--FAQ PAGE-->
 <!DOCTYPE html>
 <html lang="en">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
-    </style>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="description" content="">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-        <!-- Title -->
-        <!--<a href="http://127.0.0.1:5000/first">Speech Emotion detection</a>-->
-        <title>Frequently Asked Questions</title>
-        <!-- Favicon -->
-        <link rel="icon" href="../static/img/core-img/favicon.ico">
-        <!-- Stylesheet -->
-        <link rel="stylesheet" href="../static/style.css">
-    </head>
-    <body>
-        <!-- Preloader -->
-        <div class="preloader d-flex align-items-center justify-content-center">
-            <div class="lds-ellipsis">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!-- Title -->
+    <!--<a href="http://127.0.0.1:5000/first">Speech Emotion detection</a>-->
+    <title>Frequently Asked Questions</title>
+    <!-- Favicon -->
+    <link rel="icon" href="../static/img/core-img/favicon.ico">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader d-flex align-items-center justify-content-center">
+        <div class="lds-ellipsis">
+        </div>
+    </div>
+    <!-- ##### Header Area Start ##### -->
+    <header class="header-area">
+        <!-- Navbar Area -->
+        <div class="oneMusic-main-menu">
+            <div class="classy-nav-container breakpoint-off">
+                <div class="container">
+                    <!-- Menu -->
+                    <nav class="classy-navbar justify-content-between" id="oneMusicNav">
+                        <!-- Nav brand -->
+                        <!--<a href="http://127.0.0.1:5000/first" class="nav-brand">
+                            <img src="../static/img/core-img/logo.png" alt="">
+                        </a>-->
+                        <!-- Nav brand -->
+                        <a href="http://127.0.0.1:5000/first" class="nav-brand">
+                            <img src="../static/img/core-img/LOGO-SPEECH.png" alt="">
+                        </a>
+                        <!-- Navbar Toggler -->
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                        </div>
+                        <!-- Menu -->
+                        <div class="classy-menu">
+                            <!-- Close Button -->
+                            <div class="classycloseIcon">
+                                <div class="cross-wrap">
+                                    <span class="top"></span>
+                                    <span class="bottom"></span>
+                                </div>
+                            </div>
+                            <!-- Nav Start -->
+                            <div class="classynav">
+                                <ul>
+                                    <li>
+                                        <a href="{{url_for('first')}}">Home</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="{{url_for('index')}}">Speech</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{url_for('text')}}">Text</a>
+                                    </li>
+
+
+                                    <li>
+                                        <a href="{{url_for('login')}}">FAQ</a>
+                                    </li>
+                                </ul>
+                                <!-- Login/Register & Cart Button -->
+                            </div>
+                            <!-- Nav End -->
+                        </div>
+                    </nav>
+                </div>
             </div>
         </div>
-        <!-- ##### Header Area Start ##### -->
-        <header class="header-area">
-            <!-- Navbar Area -->
-            <div class="oneMusic-main-menu">
-                <div class="classy-nav-container breakpoint-off">
-                    <div class="container">
-                        <!-- Menu -->
-                        <nav class="classy-navbar justify-content-between" id="oneMusicNav">
-                            <!-- Nav brand -->
-                            <!--<a href="http://127.0.0.1:5000/first" class="nav-brand">
-        <img src="../static/img/core-img/logo.png" alt="">
-    </a>-->
-                            <!-- Nav brand -->
-                            <a href="http://127.0.0.1:5000/first" class="nav-brand">
-                                <img src="../static/img/core-img/LOGO-SPEECH.png" alt="">
-                            </a>
-                            <!-- Navbar Toggler -->
-                            <div class="classy-navbar-toggler">
-                                <span class="navbarToggler">
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                </span>
-                            </div>
-                            <!-- Menu -->
-                            <div class="classy-menu">
-                                <!-- Close Button -->
-                                <div class="classycloseIcon">
-                                    <div class="cross-wrap">
-                                        <span class="top"></span>
-                                        <span class="bottom"></span>
-                                    </div>
-                                </div>
-                                <!-- Nav Start -->
-                                <div class="classynav">
-                                    <ul>
-                                        <li>
-                                            <a href="{{url_for('first')}}">Home</a>
-                                        </li>
-                                        <li>
-                                            <a href="{{url_for('login')}}">FAQ</a>
-                                        </li>
-                                    </ul>
-                                    <!-- Login/Register & Cart Button -->
-                                </div>
-                                <!-- Nav End -->
-                            </div>
-                        </nav>
-                    </div>
-                </div>
+    </header>
+    <!-- ##### Header Area End ##### -->
+    <!-- ##### Breadcumb Area Start ##### -->
+    <section class="breadcumb-area bg-img bg-overlay" style="background-image: url(../static/img/faq.png);">
+    </section>
+    <!-- ##### Breadcumb Area End ##### -->
+    <!-- ##### Login Area Start ##### -->
+    <section class="login-area section-padding-100">
+        <div class="container">
+            <div class="col-lg-12 col-12 text-center mx-auto mb-5">
+                <h2 style="color: #CB1A15; font-size: 40px; font-family: 'Luckiest Guy'; letter-spacing: 5px;">
+                    FREQUENTLY ASKED QUESTIONS?
+                </h2>
             </div>
-        </header>
-        <!-- ##### Header Area End ##### -->
-        <!-- ##### Breadcumb Area Start ##### -->
-        <section class="breadcumb-area bg-img bg-overlay" style="background-image: url(../static/img/faq.png);">
-        </section>
-        <!-- ##### Breadcumb Area End ##### -->
-        <!-- ##### Login Area Start ##### -->
-        <section class="login-area section-padding-100">
-            <div class="container">
-                <div class="col-lg-12 col-12 text-center mx-auto mb-5">
-                    <h2 style="color: #CB1A15; font-size: 40px; font-family: 'Luckiest Guy'; letter-spacing: 5px;">
-                        FREQUENTLY ASKED QUESTIONS?
-                    </h2>
-                </div>
-                <div class="row">
-                    <script>
+            <div class="row">
+                <script>
         addEventListener("load", function () {
             setTimeout(hideURLbar, 0);
         }, false);
@@ -115,75 +124,106 @@
 	alert("Invalid Credentials!")
 	}
         }
-                    </script>
-                    </head>
+                </script>
+                </head>
 
 
-        </section>
+    </section>
 
 
 
-        <body>
-            <div class="container">
-                <h2> 1) What is Speech Emotion Recognition System?</h2>
-                <pre> <p style="font-size:25px;">
-                    This system makes an emotion analysis from voice data and produces a result among the options 
-                   "happy", "angry", "sad", "neutral".
+    <body>
+        <div class="container">
+            <h2> 1) What is Speech Emotion Recognition System?</h2>
+            <pre> <p style="font-size:25px;">
+                    SER (Speech Emotion Recognition) is a system that identifies emotional states in speech data 
+                    and entered text using voice analysis, text analysis and emotion recognition techniques.
                 </p> </pre>
-                <h2> 2) How can I use the system?</h2>
-                <pre> <p style="font-size:25px;">
-                   System usage is divided into two as audio file upload and text upload page. 
-                    You can select the required page according to your usage needs and see the result.
+
+            <h2> 2) How does SER work?</h2>
+            <pre> <p style="font-size:25px;">
+                    SER extracts audio attributes by processing audio files and texts. 
+                    These attributes are sent to an emotion recognition model trained with machine learning
+                    algorithms (for example, SVM, BERT, and ANN). The model determines the emotional states 
+                    of the audio data and produces an output.
                 </p> </pre>
-            </div><div id="piechart"></div>
-        </body>
 
-        <!-- ##### Footer Area Start ##### -->
-        <footer class="footer-area">
-            <div class="container">
-                <div class="row d-flex flex-wrap align-items-center">
-                    <div class="col-12 col-md-6"></div>
-                </div>
-            </div>
-        </footer>
-        <!-- ##### Footer Area Start ##### -->
-        <!-- ##### All Javascript Script ##### -->
-        <!-- jQuery-2.2.4 js -->
-        <script src="../static/js/jquery/jquery-2.2.4.min.js"></script>
-        <!-- Popper js -->
-        <script src="../static/js/bootstrap/popper.min.js"></script>
-        <!-- Bootstrap js -->
-        <script src="../static/js/bootstrap/bootstrap.min.js"></script>
-        <!-- All Plugins js -->
-        <script src="../static/js/plugins/plugins.js"></script>
-        <!-- Active js -->
-        <script src="../static/js/active.js"></script>
+            <h2> 3. What emotional states can be recognized?</h2>
+            <pre> <p style="font-size:25px;">
+                    The SER system can generally recognize basic emotional states, such as happy, 
+                    sad, frustration, angry, excited, neutral.
+                </p> </pre>
 
-        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+            <h2>
+                4. What data types are available for the SER system?<h2>
+                    <pre> <p style="font-size:25px;">
+                    The SER system can use audio data from various sources. These may include conversations, 
+                     phone calls, radio broadcasts, or any audio recording,but these files must be in the
+                     .wav extension.
+                </p> </pre>
 
-        <script type="text/javascript">
-            // Load google charts
-            google.charts.load('current', { 'packages': ['corechart'] });
-            google.charts.setOnLoadCallback(drawChart);
 
-            // Draw the chart and set the chart values
-            function drawChart() {
-                var data = google.visualization.arrayToDataTable([
-                    ['Task', 'Hours per Day'],
-                    ['Happy', 1],
-                    ['Neutral', 2],
-                    ['Sad', 3],
-                    ['Angry', 4],
-                    ['Fear', 5]
-                ]);
 
-                // Optional; add a title and set the width and height of the chart
-                var options = { 'title': 'My Average Day', 'width': 550, 'height': 400 };
+                    <h2>
+                        5. What machine learning techniques does the SER system use?<h2>
+                            <pre> <p style="font-size:25px;">
+                         The SER system usually uses machine learning algorithms such as SVM (Support Vector Machine),
+                         ANN (Artificial Neural Network), BERT (Bidirectional Encoder Representations from Transformers) 
+                         to recognize emotional states.
+            </p> </pre>
 
-                // Display the chart inside the <div> element with id="piechart"
-                var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-                chart.draw(data, options);
-            }
-        </script>
+
+                            <h2>
+                                6. What does the Voting algorithm do?<h2>
+                                    <pre> <p style="font-size:25px;">
+                            Voting algorithm determines the most accurate result by combining the results of 
+        emotion recognition and text analysis used in the SER system. This algorithm weights the outputs of both 
+        models and takes a vote to determine the result.
+                        </p> </pre>
+
+                                    <h2>
+                                        7. In which applications can the SER system be used?<h2>
+                                            <pre> <p style="font-size:25px;">
+            The SER system can be used in many areas such as music analysis, user experience evaluation, 
+        social media analysis and marketing research. It can also be used in speech recognition systems and 
+        in therapy or health applications based on emotional state analysis.
+</p> </pre>
+
+
+                                            <h2>
+                                                8. How accurate can the SER system produce?<h2>
+                                                    <pre> <p style="font-size:25px;">
+                 The accuracy of the SER system depends on the data set used, the training of the model, and the quality 
+                of the implementation. A model trained with a good dataset and properly tuned can achieve high 
+                levels of accuracy.The average of the accuracy rate currently used in the SER system is approximately 82%.
+        </p> </pre>
     </body>
+
+    <!-- ##### Footer Area Start ##### -->
+    <footer class="footer-area">
+        <div class="container">
+            <div class="row d-flex flex-wrap align-items-center">
+                <div class="col-12 col-md-6"></div>
+            </div>
+        </div>
+    </footer>
+    <!-- ##### Footer Area Start ##### -->
+    <!-- ##### All Javascript Script ##### -->
+    <!-- jQuery-2.2.4 js -->
+    <script src="../static/js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="../static/js/bootstrap/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="../static/js/bootstrap/bootstrap.min.js"></script>
+    <!-- All Plugins js -->
+    <script src="../static/js/plugins/plugins.js"></script>
+    <!-- Active js -->
+    <script src="../static/js/active.js"></script>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <script type="text/javascript">
+
+    </script>
+</body>
 </html>
