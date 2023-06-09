@@ -13,6 +13,11 @@ Text classification is an important problem in the field of natural language pro
 pip install -r requirements.txt
 ```
 
+### Running Model
+```bash
+python app.py
+```
+
 RESULTS
 <table>
   <tr>
