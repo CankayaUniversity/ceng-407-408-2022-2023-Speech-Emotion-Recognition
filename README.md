@@ -8,7 +8,6 @@ In this code block, a neural network model is created using the Keras library. T
 Text classification is an important problem in the field of natural language processing, and deep learning methods have been effective in solving this problem. In this project, the BERT model and Artificial Neural Networks (ANN) are used together for text classification. In the first step, text data is preprocessed to remove unnecessary information and noise. Then, using the BERT model and a pre-trained tokenizer, the texts are converted into numerical embedding representations. The BERT model and tokenizer are saved for use during training and can be reused later. The maximum text length is determined for the model input and input layers are defined. The BERT model processes the input texts to extract embedding representations and outputs them. The resulting embedding representations are concatenated to obtain a single vector. Using Artificial Neural Networks (ANN), dense layers and a dropout layer are applied to the vector to create a classification model. The final output layer of the model is defined with a sigmoid activation function to predict the probabilities of the classes. This method allows for effective classification of text data using the BERT model and Artificial Neural Networks (ANN) together. Finally, the trained model is saved to a file named “Model2.h5”.
 
 
-## Traning
 ### Dependencies Requirements
 ```bash
 pip install -r requirements.txt
